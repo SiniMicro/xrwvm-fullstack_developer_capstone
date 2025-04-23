@@ -29,9 +29,12 @@ urlpatterns = [
     path('login/', TemplateView.as_view(template_name="index.html")),
     path('logout/',view=views.logout_request, name ='logout'),
     path('register/', TemplateView.as_view(template_name="index.html")),
+    path('dealers/', TemplateView.as_view(template_name="index.html")),
+    path('dealer/<int:dealer_id>',TemplateView.as_view(template_name="index.html")),
     path(
         route='get_cars',
         view=views.get_cars,
         name ='getcars'
     ), 
+    path('postreview/<int:dealer_id>',TemplateView.as_view(template_name="index.html")),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
